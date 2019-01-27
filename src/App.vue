@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <Multiselect></Multiselect>
-    {{ users }}
+    <Multiselect v-bind:list="users" v-bind:options="options"></Multiselect>
   </div>
 </template>
 
@@ -23,27 +21,25 @@ export default {
   mounted() {
     this.$store.dispatch('get:users');
   },
+  data : function(){
+    let options = [{ id : '1337', name : 'test', username : 'pseudoTest'}];    
+    options = []    
+    return {
+      options
+    }
+  }
 };
 </script>
 
 
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
+  @import "./assets/css/general.scss";
+  #app {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
     color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+    margin-top: 60px;
   }
-}
 </style>
