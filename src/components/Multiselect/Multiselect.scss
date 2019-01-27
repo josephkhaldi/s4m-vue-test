@@ -1,9 +1,5 @@
 @import "../../assets/css/general.scss";
 .multiselect {
-  &__content-wrapper{
-    display: flex;
-    flex-direction: column; 
-  }
   &__input {
     box-sizing: border-box;
     border: 0;
@@ -34,12 +30,12 @@
       display: inline-block;
       border-radius: 8px;
       @include bgc($blue);
-      font-size: 12px;
+      font-size: 1.2rem;
       cursor: pointer;
       transition: all .4s;
-      margin-right: 15px;
+      margin-right: 10px;
       margin-top: 10px;
-      &:hover{
+      &:hover:not(&--empty){
         @include bgc($red);
       } 
       span{
@@ -52,6 +48,7 @@
         }
       }
       &--empty{
+        cursor: initial;
         color: $dark-grey;
         @include bgc($white);
       }
@@ -59,7 +56,10 @@
     > svg{
       position: absolute;
       right: 15px;
-      top: 18px;
+      top: 50%;
+      width: 16px;
+      height: 16px;
+      margin-top: -8px;
       fill: $dark-grey;      
     }
   }  
@@ -76,7 +76,7 @@
       padding: 10px;
       cursor: pointer;
       transition: all .4s;
-      &:hover{
+      &:hover, &.active{
         @include bgc($blue);
         color: $white;
       }
@@ -89,9 +89,10 @@
         position: absolute;
         fill: $white;
         right: 18px;
-        top: 15px;
-        width: 22px;
-        height: 22px;
+        top: 50%;
+        width: 16px;
+        height: 16px;
+        margin-top: -8px;
       }
       &:last-child{
         border-radius: 0 0 10px 10px;
