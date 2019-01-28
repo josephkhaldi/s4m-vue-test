@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+#app {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+  }
+
+:root {
+    font-size: 62.5%; 
+}
+::placeholder { 
+    color: #bbbbbb;
+    opacity: 1; 
+}
+body{
+    background-color:#EEF0F2; 
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+}
+input, textarea, select, button {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1{
+    font-size: 6rem;
+    font-weight: 100;
+    margin: 10px;
+}
+
+.container{
+    margin: auto;
+    width: 50%;
+}
+.hide{
+    display:none;
+}
+
+
+nav{
+    a{
+        background-color:#4a4a4a; 
+        color: white;
+        text-decoration : none;
+        padding: 11px;
+        border-radius: 6px;
+        margin-right: 8px;
+        transition: all .4s;
+    }
+    .router-link-exact-active {
+        background-color:#159CE7;
+    }
+
+}
+
+/* Responsive */
+@media only screen and (max-width: 640px){
+    .container {
+        width: 90%;
+    }
+}
